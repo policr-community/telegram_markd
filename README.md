@@ -18,27 +18,27 @@ Markdown to HTML converter compatible with Telegram messages
 ## Usage
 
 ````crystal
-require "telegram_markdown"
+require "telegram_markd"
 
 markdown =
-        <<-MD
-        **bold text**
-        _italic text_
-        [inline URL](http://www.example.com/)
-        [inline mention of a user](tg://user?id=123456789)
-        `inline fixed-width code`
-        ```block_language
-        pre-formatted fixed-width code block
-        ```
-        MD
+  <<-MD
+  **bold text**
+  _italic text_
+  [inline URL](http://www.example.com/)
+  [inline mention of a user](tg://user?id=123456789)
+  `inline fixed-width code`
+  ```block_language
+  pre-formatted fixed-width code block
+  ```
+  MD
 
-TelegramMarkdown.to_html markdown
-# => <strong>bold text</strong>
-# => <em>italic text</em>
-# => <a href="http://www.example.com/">inline URL</a>
-# => <a href="tg://user?id=123456789">inline mention of a user</a>
-# => <code>inline fixed-width code</code>
-# => <pre>pre-formatted fixed-width code block</pre>
+TelegramMarkd.to_html markdown
+# <strong>bold text</strong>
+# <em>italic text</em>
+# <a href="http://www.example.com/">inline URL</a>
+# <a href="tg://user?id=123456789">inline mention of a user</a>
+# <code>inline fixed-width code</code>
+# <pre>pre-formatted fixed-width code block</pre>
 ````
 
 ## Contributing
