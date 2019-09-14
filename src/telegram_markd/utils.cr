@@ -1,6 +1,6 @@
 require "json"
 
-module Markd
+module TelegramMarkd
   module Utils
     def self.timer(label : String, measure_time? : Bool)
       return yield unless measure_time?

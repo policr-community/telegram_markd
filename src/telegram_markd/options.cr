@@ -1,4 +1,4 @@
-module Markd
+module TelegramMarkd
   struct Options
     property time, gfm, toc, smart, source_pos, safe, prettyprint
 

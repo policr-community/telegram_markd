@@ -10,6 +10,7 @@ Markdown to HTML converter compatible with Telegram messages
    dependencies:
      telegram_markd:
        github: Hentioe/telegram_markd
+       branch: compatible/telegram
    ```
 
 2. Run `shards install`

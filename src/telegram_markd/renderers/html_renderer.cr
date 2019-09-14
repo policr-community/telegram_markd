@@ -1,6 +1,6 @@
 require "uri"
 
-module Markd
+module TelegramMarkd
   class HTMLRenderer < Renderer
     @disable_tag = 0
     @last_output = "\n"

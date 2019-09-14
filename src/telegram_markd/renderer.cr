@@ -1,4 +1,4 @@
-module Markd
+module TelegramMarkd
   abstract class Renderer
     def initialize(@options = Options.new)
       @output_io = IO::Memory.new

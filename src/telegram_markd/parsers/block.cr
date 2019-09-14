@@ -1,4 +1,4 @@
-module Markd::Parser
+module TelegramMarkd::Parser
   class Block
     include Parser
 

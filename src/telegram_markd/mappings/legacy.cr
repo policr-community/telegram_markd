@@ -1,4 +1,4 @@
-module Markd::HTMLEntities
+module TelegramMarkd::HTMLEntities
   LEGACY_MAPPINGS = {
     "Aacute" => '\u00C1',
     "aacute" => '\u00E1',

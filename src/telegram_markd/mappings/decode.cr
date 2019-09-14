@@ -1,4 +1,4 @@
-module Markd::HTMLEntities
+module TelegramMarkd::HTMLEntities
   DECODE_MAPPINGS = {
       0 => 65533,
     128 => 8364,

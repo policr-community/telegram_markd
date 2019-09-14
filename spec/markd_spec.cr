@@ -12,7 +12,7 @@ RENDED_HTML =
 
   HTML
 
-describe Markd do
+describe TelegramMarkd do
   # TODO: Write tests
 
   it "works" do
@@ -32,8 +32,7 @@ describe Markd do
       ```
       MD
 
-    options = Markd::Options.new(safe: true)
-    html = Markd.to_html markdown, options
+    html = TelegramMarkd.to_html markdown
     html.should eq(RENDED_HTML)
   end
 end

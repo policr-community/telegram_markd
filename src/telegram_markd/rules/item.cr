@@ -1,4 +1,4 @@
-module Markd::Rule
+module TelegramMarkd::Rule
   struct Item
     include Rule
 

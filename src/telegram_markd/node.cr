@@ -1,4 +1,4 @@
-module Markd
+module TelegramMarkd
   class Node
     # Node Type
     enum Type

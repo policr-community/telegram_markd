@@ -1,4 +1,4 @@
-module Markd
+module TelegramMarkd
   module Parser
     def self.parse(source : String, options = Options.new)
       Block.parse(source, options)
