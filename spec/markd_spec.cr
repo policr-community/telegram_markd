@@ -22,15 +22,15 @@ describe TelegramMarkd do
   it "to_html" do
     markdown =
       <<-MD
-  **bold text**
-  _italic text_
-  [inline URL](http://www.example.com/)
-  [inline mention of a user](tg://user?id=123456789)
-  `inline fixed-width code`
-  ```block_language
-  pre-formatted fixed-width code block
-  ```
-  MD
+      **bold text**
+      _italic text_
+      [inline URL](http://www.example.com/)
+      [inline mention of a user](tg://user?id=123456789)
+      `inline fixed-width code`
+      ```block_language
+      pre-formatted fixed-width code block
+      ```
+      MD
 
     html = TelegramMarkd.to_html markdown
     html.should eq(RENDED_HTML)

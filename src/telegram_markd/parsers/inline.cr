@@ -46,6 +46,8 @@ module TelegramMarkd::Parser
               @options.smart && handle_delim(char, node)
             when '['
               open_bracket(node)
+            when '!'
+              bang(node)
             when ']'
               close_bracket(node)
             when '<'
@@ -137,15 +139,8 @@ module TelegramMarkd::Parser
     private def bang(node : Node)
       start_pos = @pos
       @pos += 1
-      if @text[@pos]? == '['
-        @pos += 1
-        child = text("![")
-        node.append_child(child)
 
-        add_bracket(child, start_pos + 1, true)
-      else
-        node.append_child(text("!"))
-      end
+      node.append_child(text("!"))
 
       true
     end
