@@ -212,7 +212,7 @@ module Markd::Parser
       container.open = false
       container.source_pos = {
         container.source_pos[0],
-        {line_number, @last_line_length}
+        {line_number, @last_line_length},
       }
       RULES[container.type].token(self, container)
 
@@ -263,34 +263,7 @@ module Markd::Parser
     end
 
     private def find_next_nonspace
-      offset = @offset
-      column = @column
-
-      if @line.empty?
-        @blank = true
-      else
-        while char = @line[offset]?
-          case char
-          when ' '
-            offset += 1
-            column += 1
-          when '\t'
-            offset += 1
-            column += (4 - (column % 4))
-          else
-            break
-          end
-        end
-
-        @blank = {nil, '\n', '\r'}.includes?(char)
-      end
-
-      @next_nonspace = offset
-      @next_nonspace_column = column
-      @indent = @next_nonspace_column - @column
-      @indented = @indent >= Rule::CODE_INDENT
-
-      nil
+      @black = false
     end
 
     def advance_offset(count, columns = false)

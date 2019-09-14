@@ -24,23 +24,9 @@ module Markd
     end
 
     def code_block(node : Node, entering : Bool)
-      languages = node.fence_language ? node.fence_language.split(/\s+/) : [] of String
-      code_tag_attrs = attrs(node)
-      pre_tag_attrs = if @options.prettyprint
-                        {"class" => "prettyprint"}
-                      else
-                        {} of String => String
-                      end
-
-      if languages.size > 0 && (lang = languages[0]) && !lang.empty?
-        code_tag_attrs["class"] = "language-#{lang.strip}"
-      end
-
       cr
-      tag("pre", pre_tag_attrs)
-      tag("code", code_tag_attrs)
+      tag("pre")
       out(node.text)
-      tag("/code")
       tag("/pre")
       cr
     end
@@ -129,17 +115,7 @@ module Markd
     end
 
     def paragraph(node : Node, entering : Bool)
-      if (grand_parant = node.parent?.try &.parent?) && grand_parant.type.list?
-        return if grand_parant.data["tight"]
-      end
-
-      if entering
-        cr
-        tag("p", attrs(node))
-      else
-        tag("/p")
-        cr
-      end
+      cr
     end
 
     def emphasis(node : Node, entering : Bool)
@@ -151,7 +127,6 @@ module Markd
     end
 
     def line_break(node : Node, entering : Bool)
-      tag("br", self_closing: true)
       cr
     end
 

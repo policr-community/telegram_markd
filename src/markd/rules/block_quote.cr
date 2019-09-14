@@ -3,15 +3,7 @@ module Markd::Rule
     include Rule
 
     def match(parser : Parser, container : Node)
-      if match?(parser)
-        seek(parser)
-        parser.close_unmatched_blocks
-        parser.add_child(Node::Type::BlockQuote, parser.next_nonspace)
-
-        MatchValue::Container
-      else
-        MatchValue::None
-      end
+      MatchValue::None
     end
 
     def continue(parser : Parser, container : Node)

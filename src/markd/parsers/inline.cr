@@ -46,8 +46,6 @@ module Markd::Parser
               @options.smart && handle_delim(char, node)
             when '['
               open_bracket(node)
-            when '!'
-              bang(node)
             when ']'
               close_bracket(node)
             when '<'
